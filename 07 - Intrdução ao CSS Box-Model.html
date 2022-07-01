@@ -4,8 +4,15 @@
 
 <!-- O "content edge" é o conteúdo principal da caixa -->
 
-<!-- O "border" é definido pelo comando "border", por padrão a borda aumenta o tamanho do conteúdo conteúdo -->
+<!-- O "padding edge" é definido pelo comando "padding", por padrão o padding aumenta o tamanho da caixa do conteúdo. Na padding também é possivel trabalhar separado, mas não é costume trabalhar desse jeito -->
 
+<!-- O "border edge" é definido pelo comando "border", por padrão o border aumenta o tamanho da caixa do conteúdo. Na borda você pode trabalhar com tudo separado, como fiz lá em baixo -->
+
+<!-- O "margin edge" é definido pelo comando "margin", por padrão o margin, é transparente e também aumenta o tamanho da caixa do conteúdo. Na margem também é possivel trabalhar separado, mas não é costume trabalhar desse jeito -->
+
+<!-- OBS: As Margens entre as duas caixas não são somadas, ali em baixo nas classes section-one  e two eu coloquei 30px e 20px de margem respectivamente, porém a distâncias não fica 40px, e sim 30px. Nesse caso, a maior vai sobrepor a menor.  -->
+
+<!-- OBS²: As direções da box model seguem o mesmo padrão que seria cima, direta, baixo, esquerda, ou se preferir seguem o sentido horário, começando das 12h. Ex: "padding: 20px 10px 15px 30px;".  -->
 
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -15,19 +22,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box ;
+        }
         .section-one {
-            width: 200px;
-            background: deeppink; 
+            color: white;
+            background: deeppink;
+            background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDQB2jWsQVcPaAA94WF1tWGmTIsYEFrdL4Ew&usqp=CAU);
+            background-position: center center;
+            width: 300px;
+            height: 150px;
             border: 5px solid black;
+            border-bottom-width: 15px;
+            border-top-color: red;
+            border-left-color: yellow;
+            border-right-color: green;
+            padding: 15px 0px; 
+            margin: 30px;
+            text-align: center;
+            
         }
         .section-two {
+            width: 200px;
+            height: 50px;
+            border: 5px solid black;
+            padding: 15px;
+            margin: 20px;
             background: cyan;
         }
+
     </style>
 </head>
 <body>
 
-    <section class="section-one">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus quas eum, id mollitia ullam hic harum, incidunt quae, nostrum dolorum necessitatibus? Blanditiis unde nisi magni libero quidem beatae porro nihil!</section> 
+    <section class="section-one">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus quas eum, </section> 
     <section class="section-two">2</section>
     
 </body>
