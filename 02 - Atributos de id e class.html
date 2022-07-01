@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Para chamar qualquer tag no CSS é so fazer o que está a baixo, posso chamar a tag diretamente, ou posso chama o id ou class. O id é chamado pelo "#" e o nome do id, e a class é chamada por ".", assim como feito a baixo -->
+    <style>
+        h1 {
+            background: rgb(255, 0, 0);
+        }
+
+        #heading-one {
+            background: palevioletred;
+        }
+
+        .red-background2 {
+            background-color:green;
+        }
+        
+        .bold{
+            color: orchid;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1 id="heading-one" class="red-background1"> <!-- O "id" um atributo que poderá ser colocado para classificar alguma tag nos comandos do CSS e "class" é a mesma coisa, só que mais fraca que o "id", pois o id se sobrepõe a class mesmo ela sendo escrita depois, nesse caso seria mais idicado fazer com a class. Também posso usar o atributo "!important", que no caso ele colocará na ordem do topo da precedência, porém não é muito recomendado usá-lo -->
+        Html testing
+    </h1>
+    <h1 id="heading-two" class="red-background2">
+        Another Something
+    </h1>
+    <p>Another <b class="bold">test</b></p>
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .testando {
+            width: 50px;
+            height: 50px;
+        } 
+        .alteracao {
+            font-size: 25px;
+            color: blue;
+        }
+    </style>
+</head>
+<!-- "p" (paragraph) serve para fazer um paragrafo -->
+
+<!-- "b" (bold) serve para deixar a parte que você colocou ela em negrito -->
+
+<!-- "strong" (forte) serve para deixar uma palavra ou umparágrafoitálicoa frase no seu texto mais forte, é como se deixasse o texto em caixa alta, serve para quando for ler o código ver que está dando ênfase napalavra. Porém fisicamente você pensa que ela está somente em negrito -->
+
+<!-- "i" (italic) serve para deixar a parte que você colocou ela em itálico -->
+
+<!-- "em" (emphasis) funciona do mesmo jeito do que o "strong", so que fisicamente deixa em itálico -->
+
+<!-- "a" serve para colocar um link, ela vem acompanhada do "href=''", dentro do href eu posso colocar um arquivo ou mesmo uma página. Também posso colocar o "tar", que mostrar como eu abrirei o link (se na mesma aba, se em abas diferentes, etc) -->
+
+<!-- "a" serve para colocar um link, ela vem acompanhada do "href=''", dentro do href eu posso colocar um arquivo ou mesmo uma página. Também posso colocar o "tar", que mostrar como eu abrirei o link (se na mesma aba, se em abas diferentes, etc) -->
+
+<!-- "img" serve para colocar uma imagem, ela vem acompanhada do "src=''"(local da imagem ou link dela) e do "alt=''" (descrição da imagem). Essa tag não tem corpo, entao ela não precisa de fechamento -->
+
+<!-- "del" serve para dizer que você errou a palavra (no caso ela vai colocar um risco na palavra ou texto), não confundir com o "s" (que somente coloca o risco, esse não é semântico) "ins" vai inidicar a correção que foi feita (no caso vai aparecer sublinhado), não confundir com o "u" que é realmente o sublinhado -->
+
+<!-- "small" diminui o tamanho da letra ou texto -->
+
+<!-- "sup" serve para elevar a parte selecionada. A "sub" é para descer a parte selecionada -->
+
+<!-- "br" quebra a linha, ela não tem corpo -->
+
+<!-- "q" Serve fazer citação -->
+
+<!-- "code" Serve para dizer que a parte selecionada é um código -->
+
+<!-- "spam" É uma tag de conteiner genérico in line, diferente da div -->
+
+
+<!-- TAGS QUE NÃO PODE VIR DENTRO DO "p", OU SEJA NAO SÃO IN LINES -->
+
+
+<!-- "blockquote" Faz um bloco de citação, o "cite" serve para dizer de onde eu tirei a citação -->
+
+<!-- "hr" ela separa os paragrafos (taca uma linha onde você queira separar os textos, etc) -->
+
+<!-- "pre" Taca o texto do prefromatado -->
+
+<!-- "div" É uma tag de conteiner genérico em bloco, ou seja se colocar dentro de uma linha ele vai quebrar a linha -->
+
+<body>
+    <h1>Cabeçalho</h1>
+
+    <p> <b>Lorem, ipsum</b> dolor sit amet <strong> adipisicing </strong>elit. <i>Tenetur</i> recusandae <em>reprehenderit</em> nostrum, iusto <s>fugit</s> <u>quae</u> reiciendis sed quisquam, illo ea repudiandae <del> consectetur?</del> <ins>tudo mentira</ins> Neque aperiam obcaecati error, eius sequi possimus?</p>
+
+    <hr>
+
+    <p>Lorem, <small>ipsum dolor</small> sit amet consectetur adipisicing elit. 2<sup>2</sup>, H<sub>2</sub>. O Consequuntur <q>harum</q> quod eaque at delectus non neque atque?<br> Unde ratione modi, distinctio <code>print("Hello world!")</code>perferendis pariatur enim cupiditate aperiam quod quaerat sunt eveniet.</p>
+
+    <img src="Imagens/Google__G__Logo.svg.png" alt="Logo da Google" width="50px" height="50"> <!-- "Width" é a largura da imagem e height é a altura da imagem -->
+
+    <a href="https://www.google.com/" target="_blank">Clique Aqui.</a>
+
+    <a href="https://www.google.com/" target="_blank"><img class="testando" src="Imagens/Google__G__Logo.svg.png" alt="Logo da Google"></a> <!-- Eu posso também linkar uma imagem, assim como eu fiz acima. Criei uma classe "testando", para colocar os atributos de largura e altura no style em cima (CSS) -->
+
+    <p><span class="alteracao">Citação</span> feita por buda, só para ver como fica na página</p>
+    
+    <blockquote cite="https://www.pensador.com/textos/">Não acredite em algo simplesmente porque ouviu. Não acredite em algo simplesmente porque todos falam a respeito. Não acredite em algo simplesmente porque está escrito em seus livros religiosos. Não acredite em algo só porque seus professores e mestres dizem que é verdade. <div class="alteracao">Não acredite em tradições só porque</div> foram passadas de geração em geração. Mas, depois de muita análise e observação, se você vê que algo concorda com a razão e que conduz ao bem e benefício de todos, aceite-o e viva-o.</blockquote>
+
+    <pre>    
+    import datetime
+    a=int(input('Digite um ano: '))
+    if a==0:
+       a=datetime.date.today().year
+    if a%4==0 and a%100!=0 or a%400==0: # Posso usar "and ou "or" para acrescentar mais funções.
+        print('O ano de {} é bissexto!'.format(a))
+    else:
+        print('O ano de {} não é bissexto!'.format(a))
+    </pre> <!-- Posso colocar dentro da "pre" a tag "code" que serve para formatar o texto com letra de código -->
+
+</body>
+</html>

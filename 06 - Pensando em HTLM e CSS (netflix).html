@@ -1,0 +1,55 @@
+<!-- Um site é basicamente uma caixa dentro de outras caixas -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background: url(https://assets.nflxext.com/ffe/siteui/vlv3/271ac55e-7228-438e-824e-92db37981e59/ae50261e-04b7-4a7f-8b9b-3d1a7ee3d849/BR-pt-20220627-popsignuptwoweeks-perspective_alpha_website_medium.jpg);
+            background-size: cover;
+            background-position: top center;
+        }
+        #heading {
+            background-color: black;
+        }
+        #heading div {
+            width: 90%;
+            display: flex;
+            justify-content: space-between;
+            margin: 0 auto;
+            
+        }
+        #heading .h1 {
+            padding: 12px 20px 12px;
+            font-size: 30px;
+            text-transform: uppercase;
+        }
+        #heading a {
+            color: #E50914;
+            text-decoration: none;
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <header id="heading">
+        <div>
+            <h1 class="h1">
+                <a href="#">netflix</a>
+            </h1>
+
+            <h2 class="h1">
+                <a href="#">Entre</a>
+            </h2>
+        </div>
+    </header>
+</body>
+</html>
