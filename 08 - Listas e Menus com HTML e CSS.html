@@ -1,0 +1,79 @@
+<!-- O HTML é a marcação de uma página, ou seja, o que vai existir nela -->
+
+<!-- O CSS é o estilo daquilo que vai existir na página -->
+
+<!-- Dentro do padrão RGBA o 4 item da cor é a transparência -->
+
+<!-- OBS: Como na parte do "style" eu coloquei para tudo (*) ficar com margin 0 e padding 0, as listas em baixo do menu não estão na formatação padrão que elas aparecem -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        nav {
+            background: red;
+        }
+        body nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            padding: 10px 20px;
+            display: block;
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+        nav {
+            display: flex;
+            align-items: center;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Products</a></li>
+        </ul>
+
+    </nav>
+
+<!-- O "ul" (Unordered list) como o nome já fala é uma lista não ordenada, e dentro dela tem o itens que são a "li" -->
+    <ul>
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+    </ul>
+
+<!-- O "ol" (Ordered list) como o nome já fala é uma lista ordenada, e dentro dela tem o itens que são a "li". Nela posso colocar o atributo type, onde irá escolher o tipo de ordenação da lista. Ex: se eu colocar "type="a" ele sairá a ordem alfabética, se eu colocar "type="I", ele vai colocar números romanos -->
+    <ol type="1" start="3">
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+    </ol>
+
+<!-- O "dl" (Description list) serve para descrever a lista. O "dt" é o item que você quer descrever da lista e o "dd" é a descrição -->
+    <dl>
+        <dt>Coffee</dt>
+        <dd>bebida quente preta</dd>
+
+    </dl>
+
+</body>
+</html>
