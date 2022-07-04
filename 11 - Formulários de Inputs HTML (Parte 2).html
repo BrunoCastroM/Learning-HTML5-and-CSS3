@@ -13,6 +13,11 @@
         body {
             font-family: sans-serif;
         }
+
+        label {
+            cursor: pointer;
+        }
+
     </style>
 </head>
 <body>
@@ -22,15 +27,54 @@
     <form action="#" method="get" target="_blank" autocomplete="off">
         <p>Formulário</p>
         <p>
-            <!-- Para o input do tipo "text" existem alguns atributos que podem ser usados: 
+            <!-- O "label" é interessante colocar para melhorar a visualização e a semântica. Pode ser feito dessa maneira a baixo dizendo que o "label" é para algum "input", nesse caso, o "id="nome"", ou você pode colocar o input dentro do label pela indentação. Dessa maneira eu posso fazer com que o "label se torne um bloco e modifica-lo de forma melhor" -->
+
+            <label for="nome">Nome:</label>
+
+            <!-- Para o input existem alguns atributos que podem ser usados: 
                 1) "id": É aquela que já vimos
                 2) "name": É o nome que você dá para o input
                 3) "placeholder": É a descrição do que a pessoa irá colocar no campo (input)
                 4) "value": Como o nome já diz é o valor do input. Esse "value" é o que vai chegar junto com o "name" no servidor. Porém, não é necessário colocá-lo aqui, pois ele será preenchido na página
                 5) "disabled": Deixa o campo desabilitado, assim o usuário não poderá mexê-lo
-                6) "readonly": O usuário poderá interagir com o "input" porém não poderá altera-lo -->
+                6) "readonly": O usuário poderá interagir com o "input" porém não poderá altera-lo
+                6) "required": Serve para dizer que o campo é necessário para enviar o formulário -->
+            
+            <input type="text" id="nome" name="nome" placeholder="Nome completo" required>
+            
+        <!-- Dois tipos de "input" para selecionar as bolinhas: 
+                1) "checkbox": Ele permite você marcar o tanto de vezes que forem necessárias no formulário 
+                2) "radio": Permite somente marcar uma bolinha no formulário, só que o atributo "name" deve ser nomeado com valor igual -->
+        <p>
+            Profissão: <br>
+            <label for="dev">Desenvolvedor</label>
+            <input type="checkbox" id="dev" name="dev" value="sim">
+            <br> <!-- Essa tag "br" é só para quebrar a linha e ficar mais estético -->
+            <label for="des">Designer</label>
+            <input type="checkbox" id="des" name="des" value="sim">
+            <br>
+            <label for="fot">Fotografo</label>
+            <input type="checkbox" id="fot" name="fot" value="sim">
+        </p>
 
-            <input type="text" id="nome" name="nome" placeholder="Nome completo">
+        <p>
+            Sexo: <br>
+            <label for="masculino">Masculino</label>
+            <input type="radio" id="masculino" name="sexo" value="m">
+            <br>
+            <label for="feminino">Feminino</label>
+            <input type="radio" id="feminino" name="sexo" value="f">
+        </p>
+
+            <!-- Para criar um botão é so digitar a tag "button", dentro do "form" dois são importantes:
+                1) "submit": É o botão de enviar. Nesse caso, como ele está dentro desse "form" ele irá envia-lo 
+                2) "reset": É o botão de resetar o valores dos "input" para os "values" padrão -->
+
+        <p>
+            <button type="reset">Resetar</button>
+            <button type="submit">Enviar</button>
+        </p>
+
         </p>
   
     </form>
