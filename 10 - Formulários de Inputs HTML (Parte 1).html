@@ -1,0 +1,47 @@
+<!-- Link formulário https://developer.mozilla.org/pt-BR/docs/Learn/Forms/How_to_structure_a_web_form -->
+
+<!-- Link inputs https://www.w3schools.com/html/html_form_input_types.asp -->
+
+<!-- Os formulários em HTML significam que uma pessoa irá entrar no site e preencher dados que irão ser enviados e enviar uma requisição lá para o back-end -->
+
+<!-- Um formulário é descrito pela tag "form" -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <!-- O "form" é um bloco de conteúdos que irá receber conteúdos. Porém não podemos aninhar um formulário dentro de outro formulário, pois pode causar confunsão nos navegadores -->
+
+    <!-- O "action" dentro do "form" é uma descrição de para onde irá ser mandando o formulário pode ser uma url, caminho de algum arquivo, etc -->
+
+    <!-- O "method" dentro do "form" é um método que irá atrelar a url com parâmetros de url o padrão desse método é o "get", outro bem utilizado também é o "post" -->
+
+    <!-- O "target" dentro do "form" é um método que irá enviar o formulário para recarregar na própria página ou outra página, usando o "_black" dará para ver que oformulário foi enviado -->
+
+    <!-- O "autocomplete" dentro do "form" é um método que mostra o que você já preencheu no formulário o "off" tirará isso -->
+
+    <form action="#" method="get" target="_blank" autocomplete="off">
+        <section>
+            <h1>cabeça</h1>
+            <p>o formulario</p>
+
+            <fieldset>
+                <legend>descrição</legend>
+                <p>
+                    <input type="text">
+                </p>
+            </fieldset>
+        </section>
+    </form>
+</body>
+</html>
