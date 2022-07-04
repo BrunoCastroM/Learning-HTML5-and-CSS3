@@ -1,0 +1,38 @@
+<!-- Link formulário https://developer.mozilla.org/pt-BR/docs/Learn/Forms/How_to_structure_a_web_form -->
+
+<!-- Link inputs https://www.w3schools.com/html/html_form_input_types.asp -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Dentro do "form" você irá colocar alguns inputs que serve para preenchê-lo-->
+
+    <form action="#" method="get" target="_blank" autocomplete="off">
+        <p>Formulário</p>
+        <p>
+            <!-- Para o input do tipo "text" existem alguns atributos que podem ser usados: 
+                1) "id": É aquela que já vimos
+                2) "name": É o nome que você dá para o input
+                3) "placeholder": É a descrição do que a pessoa irá colocar no campo (input)
+                4) "value": Como o nome já diz é o valor do input. Esse "value" é o que vai chegar junto com o "name" no servidor. Porém, não é necessário colocá-lo aqui, pois ele será preenchido na página
+                5) "disabled": Deixa o campo desabilitado, assim o usuário não poderá mexê-lo
+                6) "readonly": O usuário poderá interagir com o "input" porém não poderá altera-lo -->
+
+            <input type="text" id="nome" name="nome" placeholder="Nome completo">
+        </p>
+  
+    </form>
+</body>
+</html>
