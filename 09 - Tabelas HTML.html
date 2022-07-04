@@ -1,0 +1,100 @@
+<!-- Para fazer tabelas utilizamos a tag "table". Ela recebe atributos parecidos com um site, como cabeçalho ("thead"), um corpo (tbody) e um rodapé ("tfoot"). Para as linhas você utiliza a tag "tr" e para colunas as tags "td" ou "th" -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body {
+            font-family: sans-serif;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 800px;
+        }
+
+        table td, table th {
+            border: 1px solid #ccc;
+            padding: 5px;
+            text-align: center;
+        }
+
+        table caption {
+            caption-side: bottom;
+            text-align: right;
+            font-style: italic;
+            font-size: 13px;
+            margin: 5px 0px 15px 0px;
+        }
+
+        tfoot td, table th {
+            background: #ddd;
+        }
+
+        tfoot td {
+            font-style: italic;
+        }
+        .rolamento {
+            max-width: 100%;
+            overflow-x: auto;
+        }
+
+    </style>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis ea eaque qui obcaecati.</p>
+
+<!-- Se eu quiser que a tabela não fique tão ruim de ver uma tela pequena, eu posso colocar ela para poder rolar ela com o dedo, por exemplo, usando a  tag "div" para colocar toda a tabela dentro tag (no exemplo eu foloquei uma classe chamada rolamento), e na parte de style eu colo "overflow" "x" para eixo horizontal e "y" para eixo vertical -->
+
+    <div class="rolamento">
+
+        <table>
+
+        <caption> Descrição da Tabela</caption>
+
+            <thead>
+                <tr>
+                    <th>Título 1</th>
+                    <th>Título 2</th>
+                    <th>Título 3</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>Corpo 1</td>
+                    <td>Corpo 2</td>
+                    <td>Corpo 3</td>
+                </tr>
+                <tr>
+                    <!-- Se eu quiser que uma linha que ocupe de uma coluna eu tenho que colocar o atributo "colspan" e o número de linhas que ele irá ocupar. E se eu quiser que ela ocupe uma ou mais celulas da coluna eu uso o "rowspan" -->
+                    <td colspan="2" rowspan="2">Corpo 1</td>
+                    <td>Corpo 3</td>
+                </tr>
+                <tr>
+                    <td>Corpo 3</td>
+                </tr>
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <td colspan="2" rowspan="2"></td>
+                    <td>TOTAL</td>
+                </tr>
+                <tr>
+                    <td>R$ 1500,00</td>
+                </tr>
+            </tfoot>
+
+        </table>
+
+    </div>
+
+</body>
+
+</html>
