@@ -1,0 +1,44 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+/* Tem outra forma de selecionar as classe imediatamente depois do caminho que você descreveu chamado "adjacent sibling combinator" usando o sinal de "+" e o id, classe ou tag que você quiser fazer isso 
+    -> No exemplo a baixo você poderia ler assim:
+        - Para o elemento que tiver a classe ".pai" você irá estilizar um um "p" que se encontra logo depois do "h1" */
+.pai h1+p {
+    color: red;
+}
+
+/* Dessa outra forma você irá ler: 
+    - Que ele irá modificar um "h1" logo depois de um "p" */
+.pai p+h1 {
+    color: green;
+}
+
+/* Existe também o "general sibling selector" ele seleciona todos os elementos depois do que você indicar. No exemplo abaixo ele irá selecionar todos os "p" depois do "h1" 
+
+.pai h1~p {
+    color: plum;
+}
+
+Exemplo melhor (selecionar todos as classes "dois" depois das classes "um": */
+.main .um~.dois {
+    color: pink;
+}
+
+/* Para selecionar um atributo você deve colocar o nome dele entre colchetes "[]" */
+[meu-atributo] {
+    color: blue;
+}
+
+/* Nesse caso como eu coloquei um valor no atributo ele vai ser usado em vez daquele que está sem valor no atributo, por conta da especificidade */
+[meu-atributo="valor"] {
+    color: pink;
+}
+
+/* É possivel fazer esse seleção para atributos padroões também, mas para fazer isso direito a gente faz por pseudoclasse aqui é só para mostrar que existe essa possibilidade */
+[checked] {
+    width: 50px;
+    height: 50px;
+}

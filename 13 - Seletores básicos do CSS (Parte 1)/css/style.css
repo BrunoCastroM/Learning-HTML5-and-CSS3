@@ -1,0 +1,53 @@
+/* Os seletores servem para indicar qual id, class ou tag irá ser mudada seu estilo  */
+
+/* O "*" serve para selecionar tudo no html. Geralmente é usado para deixar o "margin" em 0 e o "padding" em 0 */
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+/* Também é possível selecionar por tag, então eu só preciso colocar o nome da tag que eu quero que seja modificada. Porém, é aplicada a todas as tags com aquele nome do documento */
+p {
+    color: red;
+}
+
+/* Se você quiser selecionar somente uma tag específica você tem que fazer o caminho de indentaçao dela, para poder especificá-la, e quem será selecionada será o último elemento que eu especifiquei */
+body div section p {
+    color: blue;
+}
+
+/* Para selecionar uma classe só é preciso colocar ".nomedaclasse", ai tudo que estiver etiquetado com a classe vai ter os atributos que foram descritos */
+.color-green {
+    color: green;
+}
+
+/* Já para selecionar uma tag dentro da classe só é preciso especificar a tag depois de chamar a classe */
+.main-content h2 {
+    font-family: sans-serif;
+    font-style: italic;
+}
+
+/* Para selecionar uma classe dentro de outra é só colocar a indentação delas */
+.main-content .text-color-yellow {
+    color: yellow;
+}
+
+/* Para selecionar uma classe dentro de outra mas somente uma ou algumas tags específicas, deve ser feito como está em baixo */
+.main-content h1.heading {
+    color: purple;
+}
+
+/* Obs: Toda vem "div" por padrão com a herança ativada, então se eu colocar a cor ciano na classe "pai" a div filha vai receber o estilo que eu coloquei na classe pai (div pai) */
+.pai {
+    color: cyan;
+}
+
+/* Obs²: Se eu fizer a seleção das classes sem espaço eu vou estar dizendo que o atributo só será mudado se tiver as 2 classes dentro. Inclusive eu posso escrever qualquer coisa na classe filha, cotanto, que tenha o nome da classes classe que você quer estilizar */
+.pai.filha {
+    color: springgreen;
+}
+
+/* Para selecionar uma classe ou div neta do pai, ou seja a filha não será selecionada mesmo com o mesmo nome da classe da neta,usa-se o seletor ">" */
+.pai > .filha >.filha {
+    color: brown;
+}
