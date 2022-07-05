@@ -66,10 +66,133 @@
             <input type="radio" id="feminino" name="sexo" value="f">
         </p>
 
+            <!-- Para criar um input de data é só digitar "input type="date"". Você pode colocar a data já com um "value" nesse caso o padrão a ser digitado deve ser americano -->
+        <p>
+            <p>
+                <label for="date">Data:</label>
+                <input type="date" id="date" name="date" value="2022-07-05">
+            </p>
+
+            <!-- Posso fazer dessa outra forma também, mas nesse caso se for colocar o "value" terá que ser nesse formato a baixo. Ex: "value="2022-07-05T09:20"" -->
+            <p>
+                <label for="datetime">Data com horas:</label>
+                <input type="datetime-local" id="datetime" name="datetime" value="2022-07-05T09:20">
+            </p>
+
+            <!-- Para criar um input de horas é só digitar "input type="time"", os segundos não são necessários no "value", porém se você quiser existe essa opção -->
+            <p>
+                <label for="time">Horas:</label>
+                <input type="time" id="time" name="time" value="09:20:21">
+            </p>
+
+            <!-- Para criar um input de horas é só digitar "input type="color"" e no "value" eu coloco o código da cor -->
+            <p>
+                <label for="cor">Cor:</label>
+                <input type="color" id="cor" name="cor" value=#ff0000>
+            </p>
+
+            <!-- Para criar um input de email é só digitar "input type="email"" nesse caso um "placeholder" seria bom para exemplificar o que o usuário deve escrever -->
+            <p>
+                <label for="email">Seu email:</label>
+                <input type="email" id="email" name="email" placeholder="ex.:email@gmail.com">
+            </p>
+
+            <!-- Para criar um input para anexar arquivo é só digitar "input type="file"". Se eu quiser eu posso coplocar o "accept", nesse caso, eu colocaria as extensões que seriam aceitas para anexar, porém isso não é garantia que dará sempre certo. O atributo "multiple" me permite selecionar vários arquivos de uma vez -->
+            <p>
+                <label for="file">Anexar Arquivo:</label>
+                <input type="file" id="file" name="file" accept=".txt" multiple>
+            </p>
+
+            <!-- Para criar um input de número é só digitar "input type="number"", posso também colocar um "min" e um "max" para os números e o "step" dele -->
+            <p>
+                <label for="number">Número:</label>
+                <input type="number" id="number" name="number" min="1" max="20" step="2">
+            </p>
+
+            <!-- Para criar um input de senha é só digitar "input type="password"" -->
+            <p>
+                <label for="password">Senha:</label>
+                <input type="password" id="password" name="password" placeholder="Digite sua senha">
+            </p>
+
+            <!-- Para criar um input de um intervalo (tanto até tanto) é só digitar "input type="range"", o "min", o "max" e o "step" também funcionam aqui. -->
+            <p>
+                <label for="range">Intervalo:</label>
+                <input type="range" id="range" name="range" min="0" max="10" step="2">
+            </p>
+
+            <!-- "range" usando o "tickmarks"-->
+
+            <p>
+                <label for="range">Intervalo:</label>
+                <input type="range" id="range" name="range" list="tickmarks">
+
+                <datalist id="tickmarks">
+                    <option value="0" label="0%"></option>
+                    <option value="10"></option>
+                    <option value="20"></option>
+                    <option value="30"></option>
+                    <option value="40"></option>
+                    <option value="50" label="50%"></option>
+                    <option value="60"></option>
+                    <option value="70"></option>
+                    <option value="80"></option>
+                    <option value="90"></option>
+                    <option value="100" label="100%"></option>
+                </datalist>
+            </p>
+
+            <!-- Para criar um validador de url é só digitar "input type="url"", ai ele só aceitará o envio quando digitar uma url -->
+            <p>
+                <label for="url">Url:</label>
+                <input type="url" id="url" name="url" placeholder="URL">
+            </p>
+
+            <!-- Similar ao input de url e de nome temos o para busca o "search" (semântico), a diferença com os outros é que ele tem um "x" no final da caixa -->
+            <p>
+                <label for="search">Busca:</label>
+                <input type="search" id="search" name="search" placeholder="search">
+            </p>
+
+            <!-- Esses a baixo são diferentes do input: -->
+
+            <!-- select: -->
+
+            <!-- Caixa para selecionar uma opção, do lado de "option" terá o valor que será atribuido ao que você escreveu. Ex: no "Andar" o valor atribuído a ele será "1". Se eu quiser deixar algo já selecionado eu adiciono o atributo "selected", ou se eu quiser desabilidar eu uso o "disabled" -->
+            <p>
+                <label for="select">Selecionar:</label>
+                <!-- É possível também usar o "multiple" aqui-->
+                <select name="select" id="select">
+                    <!-- Posso fazer um grupo da seleção usando o "optgroup" e colocar o seu "label"de acordo com a seção que eu quero -->
+                    <optgroup label="Maratona">
+                        <option value="1">Andar</option>
+                        <option value="2" selected>Caminhada</option>
+                        <!-- Posso fazer dessa forma também de baixo -->
+                        <option value="3" label="Corrida"></option>
+                        <option value="3" label="Seninha" disabled></option>
+                    </optgroup>
+                    <optgroup label="Natação">
+                        <option value="1">Costas</option>
+                        <option value="2" selected>Livre</option>
+                        <option value="3" label="Peito"></option>
+                        <option value="3" label="Borboleta" disabled></option>
+                    </optgroup>
+
+                </select>
+            </p>
+
+            <!-- textarea: -->
+
+            <!-- Nele você irá criar uma caixa de texto -->
+            <p>
+                <label for="textarea">Texto:</label>
+                <textarea name="textarea" id="textarea" cols="10" rows="10"></textarea>
+            </p>
+        </p>
+
             <!-- Para criar um botão é so digitar a tag "button", dentro do "form" dois são importantes:
                 1) "submit": É o botão de enviar. Nesse caso, como ele está dentro desse "form" ele irá envia-lo 
                 2) "reset": É o botão de resetar o valores dos "input" para os "values" padrão -->
-
         <p>
             <button type="reset">Resetar</button>
             <button type="submit">Enviar</button>
