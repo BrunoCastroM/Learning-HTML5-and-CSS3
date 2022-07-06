@@ -37,8 +37,23 @@ Exemplo melhor (selecionar todos as classes "dois" depois das classes "um": */
     color: pink;
 }
 
-/* É possivel fazer esse seleção para atributos padroões também, mas para fazer isso direito a gente faz por pseudoclasse aqui é só para mostrar que existe essa possibilidade */
+/* É possivel fazer esse seleção para atributos padrões também, mas para fazer isso direito a gente faz por pseudoclasse aqui é só para mostrar que existe essa possibilidade */
 [checked] {
     width: 50px;
     height: 50px;
+}
+
+/* Posso selecionar o atributo assim também com o "~", nesse caso ele irá pegar o valor "valor1" dentro do atributo, mesmo que no atributo lá no html tenha um valor maior do que só esse feito na seleção */
+[meu-atributo~="valor1"] {
+    color: brown;
+}
+
+/* Posso selecionar o atributo assim também com o "^", nesse caso ele irá pegar o valor do atributo e se o atributo começar com isso ele vai selecionar, independente se o valor é maior (começa com)*/
+[meu-atributo^="valor2"] {
+    color: yellow;
+}
+
+/* Posso selecionar o atributo assim também com o "$", nesse caso ele irá pegar o valor dentro do atributo e se o atributo terminar com isso ele vai selecionar, independente se o valor é maior (começa com)*/
+[meu-atributo^="valor2"] {
+    color: yellow;
 }
