@@ -48,12 +48,17 @@ Exemplo melhor (selecionar todos as classes "dois" depois das classes "um": */
     color: brown;
 }
 
-/* Posso selecionar o atributo assim também com o "^", nesse caso ele irá pegar o valor do atributo e se o atributo começar com isso ele vai selecionar, independente se o valor é maior (começa com)*/
+/* Posso selecionar o atributo assim também com o "^", nesse caso ele irá pegar o valor do atributo e se o atributo começar com isso ele vai selecionar, independente se o valor é maior (começa com) */
 [meu-atributo^="valor2"] {
     color: yellow;
 }
 
-/* Posso selecionar o atributo assim também com o "$", nesse caso ele irá pegar o valor dentro do atributo e se o atributo terminar com isso ele vai selecionar, independente se o valor é maior (começa com)*/
-[meu-atributo^="valor2"] {
-    color: yellow;
+/* Posso selecionar o atributo assim também com o "$", nesse caso ele irá pegar o valor dentro do atributo e se o atributo terminar com isso ele vai selecionar, independente se o valor é maior (termina com ) */
+[meu-atributo$="i"] {
+    color: grey;
+}
+
+/* Posso selecionar o atributo assim também com o "*", quer dizer que se o atributo contém determinada letra ou palavra que eu coloquei nele, ele irá selecionar. No exemplo eu coloquei dentro do atributo um "*" também */
+[meu-atributo*="*"] {
+    color: rebeccapurple;
 }

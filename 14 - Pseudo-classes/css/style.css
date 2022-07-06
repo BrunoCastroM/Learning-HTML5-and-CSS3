@@ -1,0 +1,109 @@
+/* Link para tirar as dúvidas sobre pseudo-classes: https://developer.mozilla.org/pt-BR/docs/Web/CSS/Pseudo-classes */
+
+/* As pseudo-classes são seletores que refletem o estado de algum elemento */
+
+/* Depois que você seleciona a classe você usa os ":" para selecionar qual pseudo-classe você irá usar */
+
+/* Usa-se a pseudo-classe "hover" para quando você passar o mouse em cima ele vai aparecer oque você atribuiu na estilização */
+.heading:hover {
+    background: red;
+}
+
+/* O "transition" serve para fazer uma transição quando você passa o mouse me cima ta tag, classe, ou id que você selecionou. É possível colocar em milisegundos (ms) ou me segundos (s) */
+.heading {
+    transition: all 300ms ease-in-out;
+}
+
+/* Para configurar um link a gente pode usar uma classe ou a própria tag */
+a {
+    color: darkorange;
+}
+
+/* A "link" serve para aqueles links que nunca foram visitados */
+a:link {
+    color: pink;
+}
+
+/* A "visited" serve para aqueles links que já foram visitados */
+a:visited {
+    color: green;
+}
+
+a:hover {
+    background: darkblue;
+    color: white;
+    text-decoration: none;
+}
+
+/* A "active" serve para para quando você clicar no link ele se comportar da maneira que você estilizou */
+a:active {
+    background: darkred;
+    color: white;
+    text-decoration: none;
+}
+
+/* A "focus" serve para para quando você clicar no elemento que está em foco mudar para jeito que você estilizou. Nesse caso eu coloquei uma sombrinha na borda */
+input:focus {
+    box-shadow: 0 0 5px rgba(0,0,0,0.8);
+    outline: none;
+    border: 0.8px solid black;
+}
+
+/* A "checked" e o "disabled" servem para para quando você clicar ou desclicar, respectivamente, no elemento mudar para jeito que você estilizou. Nesse caso eu coloquei uma largura e altura de 50px */
+input:checked {
+    width: 50px;
+    height: 50px;
+}
+
+input:disabled {
+    width: 50px;
+    height: 50px;
+} /* Obs: O elemento tem que estar com o atributo "disabled", se não, não funciona */
+
+/* Eu posso correlacionar para quando o "input" estiver em "checked" ele fazer alguma coisa com uma classe, id ou tag. Nesse caso, eu usei o a tag "p", quando eu marco a "checkbox" o texto do "p" fica roxo */
+input:checked + p{
+    background: purple;
+}
+
+/* O "first-child" e o "last-child" você irá selecionar, respextivamente o primeiro e o último filho da sua indentação */
+.pai .lista li:first-child{
+    background: purple;
+}
+
+.pai .lista li:last-child{
+    background: purple;
+}
+
+/* Quando o input for "required" eu posso usar a pseudo-classe para estilizá-lo basedo no estado que o elemento se encontra na página */
+input:required{
+    background: purple;
+}
+
+
+/* ------------------- not ------------------- */
+
+/* O "not" é faz a exceção do meu argumento (é um inverso do normal). Nesse caso, o segundo "p" ("Olá mundo!") não sofrerá alterações se eu tirar essa parte do CCS do comentário
+
+p:not(.diferente){
+    background: purple;
+} */
+
+
+/* ------------------- nth-child ------------------- */
+
+/* O "nth-child" (deve sempre tabalhar com irmãos) seleciona o filho dentro do pai, e você ainda deve indicar o índice dele que começa no "1". Neste caso eu indiquei o "7" para ficar com "back ground" roxo. Ainda posso colocar todos os índices pares ou ímpares, usando os atributos "even" e "odd" respectivamente */
+.lista2 li:nth-child(7){
+    background: purple;
+}
+
+.lista2 li:nth-child(even){
+    background: green;
+}
+
+.lista3 li:nth-child(3n){
+    background: cyan;
+}   /* O "n" serve para indicar os índices que você vai pular. Aqui eu mandei pular de 3 em 3 indices */
+
+.lista3 li:nth-child(3n+5){
+    background: brown;
+}   /* O "+" indica qual índice ele irá começar a implementar a estilização */
