@@ -1,0 +1,46 @@
+/* Link para tirar as dúvidas sobre pseudo-elementos: https://developer.mozilla.org/pt-BR/docs/Web/CSS/Pseudo-elements */
+
+/* Pseudo-elementos se comportam de maneira similar as classes, só que vai parecer que você adicionou um elemento a mais na página, para fazer o que você quer */
+
+/* Os pseudo-elementos são feitos por meio de "::" */
+
+/* O "after" como o nome já fala ele será incluído depois do elemento nessa caso o "li" */
+ul li::after {
+    content: ' - ';
+    background: red;
+    color: white;
+    display: block;
+}
+
+/* O "before" como o nome já fala ele será incluído antes do elemento nesse caso o "li" */
+ul li::before {
+    content: ' - ';
+}
+
+/* O "fist-letter" deixa que a primeira letra seja diferente */
+p::first-letter {
+    font-size: 50px;
+    display: block;
+    float: left;
+    margin: 0px 10px 10px 0px;
+}
+
+/* O "fist-line" deixa que a primeira linha seja diferente */
+p::first-line {
+    background: green;
+}
+
+/* No "selection" tudo que você selecionar com o mouse ele vai ser estilizado de acordo com o que você colocou */
+p::selection {
+    color: white;
+    background: black;
+}
+
+/* O "placeholder" faz com que o atributo placeholder seja editável, não é necessário passar um elemento */
+::placeholder {
+    color: palevioletred;
+}
+
+.diferente::placeholder {
+    color: blue;
+}   /* Obs: Se você quiser mexer somente em um "place holder" você pode criar uma classe só para ela. */
