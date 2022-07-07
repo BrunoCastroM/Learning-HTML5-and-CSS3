@@ -1,0 +1,40 @@
+/* Link para tirar as dúvidas sobre especificidade do CSS: https://developer.mozilla.org/pt-BR/docs/Web/CSS/Specificity */
+
+/* A ordem de preferência de seleção funciona da seguinte forma:
+    - ID > Classes, Atributos e Pseudo-classes > Elementos e Pseudo-elementos 
+
+    Obs: Se você passar o mouse em cima do id, classe, atributo, etc, você vai perceber que o VScode mostra o "Selector Specificity" ele irá mostrar exatamente o grau de especificidade, só que por meio de números Ex: o id "p" abaixo fica (1,0,0 (No VSCode)  
+
+    Obs²: AS tags no HTML se sobrepõem a qualquer especificidade do CSS. Então é como se ela viessa antes do "id" */
+
+#p {
+    background: red;
+}
+
+.p {
+    background: yellow;
+}  /* Obs: Aqui o id prevaleceu sobre a classe, pois a especificidade do id predomina sobre os demais. Então nem será aplicado o backgroud yellow. E quando temos um empate, quem irá prevalecer será sempre a última regra que você colocou. Isso também serve para o HTML */
+
+/* Dessa forma que eu fiz abaixo ele especifica mais ainda o caminho e falar que deve contar o id "p" e a classe "p", assim a especificidade aumenta e ela se sobrepõe ao id sozinho. Obs: Não pode dar espaço nessa especificidade, pois senão ele não funcionará  */
+#p.p {
+    background: yellow;
+}
+
+/* Neste caso abaixo como eu coloquei um elemento e depois uma classe (0,1,1 (No VSCode)) ele não irá prevalecer sobre a seleção acima que é um id e uma classe em seguida (1,1,0 (No VSCode)) */
+p.p {
+    background: green;
+}
+
+/* A "tag" lá no HTML se sobrepõe a especificidade do CSS. Nesse exemplo mesmo eu colocando a id "h1" para mudar a cor para marron ele não fez nada pois eu fiz uma tag lá no HTML para deixar em ciano */
+#h1 {
+    color: brown;
+}
+
+
+/* Se eu escrever a palavra "!important" depois da regra ai ela irá se sobrepor a tudo inclusive as tags feitas no HTML
+
+#h1 {
+    color: gray !important;
+}
+
+*/
