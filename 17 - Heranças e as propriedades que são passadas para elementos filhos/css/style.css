@@ -1,0 +1,18 @@
+#texto {
+    font-family: sans-serif;
+    color: red;
+    font-size: 25px;
+}
+
+/* O "initial" faz com que o estilo do atributo que eu escrevi não seja herdado. Em cima eu coloquei o tamanho da fonte 25px e a cor vermelha dentro do "id" "texto", mas embaixo eu coloquei que eu não quero que seja herdado isso */
+
+p {
+    font-size: initial;
+    color: initial;
+}
+
+/* O "inherit" faz com que o estilo do atributo que eu escrevi seja herdado. Em cima eu pedi para tirar o tamanho da fonte e a cor dos "p". Porém, eu criei outra classe chamada "teste" dentro de um dos "p" que irá me retornar as estilizações feitas no "id" "texto" */
+.teste {
+    font-size: inherit;
+    color: inherit;
+}

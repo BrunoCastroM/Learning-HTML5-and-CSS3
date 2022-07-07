@@ -1,5 +1,7 @@
 /* Link para tirar as dúvidas sobre especificidade do CSS: https://developer.mozilla.org/pt-BR/docs/Web/CSS/Specificity */
 
+/* Link para a calculadora de especificidade: https://specificity.keegan.st/ */
+
 /* A ordem de preferência de seleção funciona da seguinte forma:
     - ID > Classes, Atributos e Pseudo-classes > Elementos e Pseudo-elementos 
 
