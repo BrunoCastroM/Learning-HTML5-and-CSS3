@@ -1,28 +1,55 @@
-/* A propriedade "block" do display vem já vem por por padrão entao nem precisar se colocada */
-
-.texto {
-    /* display: block; */
-    background: red;
-    /* O "width" e o "heith" alteram o cnteúdo da caixa */
-    width: 200px;
-    height: 200px;
-    overflow-y: auto; /* Se eu colocar um tamanho de conteúdo que não caiba na caixa ele passa para fora dela pela parte de baixo, para que isso não ocorra é só usa o "overflow: hidden;" que ele vai continuar o conteúdo da caixa sem jogá-lo para fora, no caso do tamanho da caixa não ser o mesmo ele vai deixar o conteúdo escondido. Você poderá escolher em qual eixo ele vai rolar "x" ou "y", ou você pode deixar no "auto" que ele já ajusta o conteúdo automaticamente dentro da caixa e se precisar de rolamento ele irá colocar */
+* {
+    margin: 0;
+    padding: 0;
 }
 
-.outro-texto {
-    background: purple;
+/* O display possui varios elementos, como o "block" que separa o conteúdo em blocos (um em baixo do outro). Obs: A "div" por padrão vem como display block, então não seria necessário colocar */
+.grid1 .col1 {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    display: block;
+    background: rgb(32, 218, 125);    
+}
+
+/* o "inline" que irá juntar o conteúdo de block em uma mesma linha */
+.grid2 .col2 {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    background: goldenrod;
+    float: left; /* O "float" vai direcionar onde que a caixa ou as caixas irão flutuar */
+}
+
+/* Posso usar o "clear" para limpar a formatação do float feita acima e o texto não ficar do lado das caixas */
+p {
+    clear: left;
+}
+/* Posso fazer o "clear" dessa forma também, nesse caso a própria div irá no final dela (por conta do "after") limpar as laterais esquerda e direta*/
+.grid2::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+
+/* Forma de alinha elementos (hoje em dia não é mais tão usado pois,nós temos o "flex-box" ou o "display: grid;": */
+.grid3 {
+    padding: 15px;
+}
+
+.grid3 .col3 {
+    box-sizing: border-box; /* Essa parte do "box-sizing" eu posso retirar daqui e colocar lá me cima no "*" */
+    width: 33.33%;
+    height: 300px;
+    float: left;
+    padding: 15px;
+}
+
+.grid3 .col3 .col3-content {
     width: 100%;
     height: 100%;
-    /* Eu posso limitar a largura e altura máximas ou mínimas usando o "max-width", "max-height", ""max-width" e "min-height"  */
-    max-width: 700px;
-    max-height: 100%;
-    min-width: 0px;
-    min-height: 0px;
-    /* A "margin configurada dessa forma faz com que a "div" seja ajusta ao meio da tela, nesse caso as margens de cima e de baixo estão em "0" e a da esquerda e direta automáticas, nesse caso fica ao centro da tela  */
-
-    /* O "box-sizing" serve para você configurar como o "padding", "border" e "margin" irão contar as suas medidas. Ex: quando coloca em "content-box" quer dizer que as três medidas serão somadas ao conteúdo. Quando você coloca "border-box" toda medida que está dentro da borda vai se ajustar ao tamanho dela, menos o "margin", pois fica fora da bordar. E assim segue com os outros atributos */
-    box-sizing: border-box;
-    padding: 50px;
-    border: 8px double grey;
-    margin: 40px auto;
+    background-color: red;
 }
+
