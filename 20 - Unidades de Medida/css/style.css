@@ -1,55 +1,59 @@
-* {
-    margin: 0;
-    padding: 0;
-}
+/* Link para tirar as dúvidas: https://www.w3schools.com/cssref/css_units.asp */
 
-/* O display possui varios elementos, como o "block" que separa o conteúdo em blocos (um em baixo do outro). Obs: A "div" por padrão vem como display block, então não seria necessário colocar */
-.grid1 .col1 {
-    display: inline-block;
-    width: 100px;
-    height: 100px;
-    display: block;
-    background: rgb(32, 218, 125);    
-}
+/* Existem medidas absolutas e medidas relativas. As absolutas, são medidas que não são baseadas em nada. Já as relativas eles mudam de acordo com alguma coisas que elas são baseadas, ex: se você mudar o tamanho da fonte no navegador elas irão seguir o padrão dele, já nas medidas absolutas o tamanho da fonte não mudaria */
 
-/* o "inline" que irá juntar o conteúdo de block em uma mesma linha */
-.grid2 .col2 {
-    display: inline-block;
-    width: 100px;
-    height: 100px;
-    display: inline-block;
-    background: goldenrod;
-    float: left; /* O "float" vai direcionar onde que a caixa ou as caixas irão flutuar */
-}
+/* ---------------- Medidas Absoluta ---------------- */
 
-/* Posso usar o "clear" para limpar a formatação do float feita acima e o texto não ficar do lado das caixas */
+/* O pixel é a mais utilizada das medidas absolutas */
 p {
-    clear: left;
-}
-/* Posso fazer o "clear" dessa forma também, nesse caso a própria div irá no final dela (por conta do "after") limpar as laterais esquerda e direta*/
-.grid2::after {
-    content: '';
-    display: block;
-    clear: both;
+    font-size: 20px;  /* Exemplo: para essa fonte ficar em 20px ela nao precisou da medida de nenhum outro elemento */
 }
 
+/* ---------------- Medidas Relativas ---------------- */
 
-/* Forma de alinha elementos (hoje em dia não é mais tão usado pois,nós temos o "flex-box" ou o "display: grid;": */
-.grid3 {
-    padding: 15px;
+/* O "em" faz com que o elemento se comporte baseando-se em um elemento pai mais próximo */
+.pai {
+    font-size: 50px;
 }
 
-.grid3 .col3 {
-    box-sizing: border-box; /* Essa parte do "box-sizing" eu posso retirar daqui e colocar lá me cima no "*" */
-    width: 33.33%;
-    height: 300px;
-    float: left;
-    padding: 15px;
+.filha {
+    font-size: 0.5em; /* Nesse exemplo a classe filha tem 50% do tamanho da fonte da classe pai no caso 25px. Funciona em porcentagem inteira, onde 1 = 100%, 0,7 = 70%, e assim vai */
 }
 
-.grid3 .col3 .col3-content {
-    width: 100%;
-    height: 100%;
-    background-color: red;
+/* O "rem" é parecido com o "em" mas a diferença é que o "rem" se basea nas medidas do "root" que seria o HTML em si
+
+html {
+    font-size: 10px;    -->>  Obs: As páginas por padrão tem 16px, se eu colocar o "font-size: 62,5%;", eu transformaria em o padrão em 10px e assim eu poderia o "rem" ficando 10px para cada unidade de 1rem  <<--
+}
+p {
+    font-size: 2rem;     -->> Aqui eu coloquei a fonte do html inteiro em 10px e depois eu coloquei que o "p" teria 200% do tamanho que eu coloquei do HTML, ou seja 20px  <<--
 }
 
+ /* O "vw" (width) e o "vh" (height) vão se comportar de acordo com o tamanho da caixa ou tela visível que ela está inserida (se for no html todo, vai ficar visível no html todo, como eu coloquei uma "div" em baixo, ele vai cobrir a "div"). Ele vai de 0 que seria 0% até 100 que seria 100% */
+.pai-teste {
+    width: 100vw;
+    height: 100vh;
+    background: gray;
+    font-size: 50px;
+}
+
+.filha-teste {
+    font-size: 0.5em;
+}
+
+.pai-teste1 {
+    width: 100vw;
+    height: 100vh;
+    background: turquoise;
+    font-size: 50px;
+}
+
+.filha-teste1 {
+    font-size: 0.5em;
+}
+
+/* Temos a "%" também, o comportamento dela é parecido com "em" então as medidas são porcetagens em relação ao elemento pai */
+
+/* Temos a "vmin" também, que se refere ao mínimo que a tela (view port) irá mostrar para os lados vertical ou horizontal da tela (dependendo de qual for o mínimo, pois ele muda de acordo com o tamanho que sua janela está) e vai de 0% = 0 até 100% = 100 */
+
+/* Temos a "vmax" também, que se refere ao máximo que a tela (view port) irá mostrar para os lados vertical ou horizontal da tela (dependendo de qual for o máximo, pois ele muda de acordo com o tamanho que sua janela está) e vai de 0% = 0 até 100% = 100 */
