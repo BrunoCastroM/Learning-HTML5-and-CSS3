@@ -1,0 +1,21 @@
+/* Link para tirar as dúvidas: https://www.w3schools.com/css/css_text.asp */
+
+p {
+    font-size: 20px;  /* Tamanho da fonte */
+    font-style: italic;  /* Estilo da fonte */
+    font-weight: bold;  /* Negrito */
+    direction: rtl; /* Direção do texto */
+    letter-spacing: 2px; /* Espaçamento das letras */
+    word-spacing: 5px;  /* Espaçamento das palavras */
+    line-height: 30px;  /* Altura da linha */
+    text-align: left;  /* Alinhamento do texto */
+    text-decoration: underline;  /* Decoração no texto, é possivel colocar mais de uma decoração */
+    text-indent: 70px;  /* Indentação */
+    text-shadow: 5px 2px 10px red;  /* Colocar sobras no texto:
+        1) Primeiro: Posição da sobra da esquerda ou direta (negativo ou positivo respectivamente);
+        2) Segundo: Posição cima ou baixo (negativo ou positivo respecticamente);
+        3) Terceito: É se fica ou não esfumaçado;
+        4) Quarto: É a cor da sombra */
+    text-transform: uppercase;  /* Caixa alta ou não */
+}
+
