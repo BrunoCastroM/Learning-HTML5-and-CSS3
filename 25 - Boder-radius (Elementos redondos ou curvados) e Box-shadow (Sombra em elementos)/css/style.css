@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: sans-serif;
+}
+
+
+.menu {
+    width: 100%;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.75);
+}
+.menu ul {
+    list-style: none;
+    display: block;
+    max-width: 1200px;
+    padding: 0px 30px;
+    margin: 0 auto;
+}
+.menu ul li{
+    float: left;
+}
+.menu ul li a{
+    display: block;
+    color: white;
+    padding: 20px;
+    text-decoration: none;
+    transition: all 300ms ease-in-out;
+}
+.menu ul li a:hover{
+    background: #333;
+}
+
+
+.grid {
+    padding: 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 73px;
+}
+.grid:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.grid .col {
+    box-sizing: border-box;
+    width: 33.33%;
+    height: 300px;
+    float: left;
+    padding: 15px;
+}
+.grid .col .col-content {
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    border-radius: 50px;  /* O "border-radius" serve para você arredondar nos cantos dos objetos, dá para especificar onde você quer arredondar, da mesma forma das outras medidas em sentido horário */
+    box-shadow: 5px 5px 5px 10px rgba(0, 0, 0, 0.781);  /* O "box-shadow" serve para você colocar sombra nos cantos dos objetos, dá para especificar onde você quer sombrear, da mesma forma do "text-shadow". Ela possui 4 valores o primeiro é esquerda ou direita (positivo - direita, negativo - esquerda), o segundo é cima ou baixo (positivo - baixo, negativo - cima), o terceiro é um esfumaçamento da sombra, o quarto serve para espalhar a sombra */
+}
+
+
+.full-page {
+    padding: 0px 30px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding-top: 73px;
+    height: 100vh;
+    background: turquoise;
+}
+.full-page-content {
+    max-width: 1200px;
+    padding: 0 30px;
+    margin: 0 auto;
+    
+}
+
+
+@media (max-width: 360px) {
+    .grid .col {
+        width: 100%;
+    }
+}
+
+@media (min-width: 361px) and (max-width: 768px) {
+    .grid .col {
+        width: 50%;
+    }
+}
