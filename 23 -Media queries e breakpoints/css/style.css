@@ -1,0 +1,35 @@
+/* Link para tirar as dúvidas: https://www.w3schools.com/cssref/css3_pr_mediaquery.asp  |  https://developer.mozilla.org/pt-BR/docs/Web/CSS/Media_Queries/Using_media_queries*/
+
+/* Breakpoints é o ponto em que uma janela consegue mostrar o seu conteúdo dependendo do tamanho da tela do dispositivo, você irá querer que o conteúdo se adapte para não ficar tão feio na tela */
+
+.grid {
+    padding: 15px;
+}
+
+.grid .col {
+    box-sizing: border-box;
+    width: 33.33%;
+    height: 300px;
+    float: left;
+    padding: 15px;
+}
+
+.grid .col .col-content {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 238, 255, 0.87);
+}
+
+/* A Media Queries serve para fazer o argumento de que se a tela for tantos pixeis ela irá se compotar do jeito em que eu estilizei no css. Ver exemplo a baixo */
+
+@media (max-width: 360px) {
+    .grid .col {
+        width: 100%;  /* Aqui eu fiz o argumento que se a largura da tela fosse 360px, ela iria mostrar só um quadrado em vez de ajeitar os 3 quadrados em uma linha somente */
+    }
+}
+
+@media (min-width: 361px) and (max-width: 768px) {
+    .grid .col {
+        width: 50%;  /* Aqui eu fiz o argumento que se a largura mínima da tela fosse de 361px até 768px (máximo), ela iria mostrar só 2 quadrados em vez de ajeitar os 3 quadrados em uma linha somente */
+    }
+}
