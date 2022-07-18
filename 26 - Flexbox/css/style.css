@@ -1,0 +1,102 @@
+/* Link para tirar as dúvidas: https://developer.mozilla.org/pt-BR/docs/Learn/CSS/CSS_layout/Flexbox#um_aparte_no_modelo_flex  |  https://css-tricks.com/snippets/css/a-guide-to-flexbox/*/
+
+/* A "flex box", como o nome já diz é uma caixa felxível, podendo configurar várias coisas inclusive grids  */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.flex-container {
+    display: flex;  /* Quando você coloca o display flex, é aberto essas 3 possibilidades abaixo para mexer no conteúdo do jeito que você quiser. Também tem o "inline-flex" que se comporta como um display block */
+    flex-direction: row;  /* O "flex-direction" indica a direção do eixo principal (main axis) e o eixo perpendicular (cross axis) do meu flex, nesse caso o "row" que dizer que irão se alinha em linha, ou seja o eixo principal é horizontal . Se fosse "column" o eixo principal seria o vertical.Dá para você reverter a ordem das flex-box usando o atributo mais o "reverse" */
+    justify-content: space-between; /* O "justify-content" serve para você alinha o eixo principal (main axis) de acordo com você deseja. você pode escolher entre "flex-start", "flex-end", "space-around", "space-evenly", "space-between", "center" , entre outros */
+    align-items: flex-start; /* O "align-items" serve para você alinha o eixo perpendicular (cross axis) de acordo com você deseja. Os atributos dele também são iguais aos do "justify-content" */
+    align-content: stretch; /* O "align-content" é a mesma coisa do "align-items" só quem em vez de alinha itens, ele vai alinhar o contaúdo todo */
+    background: yellow;
+    height: 640px;
+    flex-wrap: wrap;  /* Serve para ajustar o conteúdo(quebrar a linha) de acordo com o tamanho que a tela que se encontra no momento */
+    width: 960px;
+}
+
+
+.flex-item {
+    width: 33.33%;
+    color: white;
+    flex-wrap: wrap;
+    background: red;
+}
+
+
+.flex-container1 {
+    display: flex;
+    justify-content: space-between;
+    background: turquoise;
+}
+
+
+.flex-item1 {
+    width: 15%;  /* Quando você usa o flex, as medidas ficam relacionadas dentro do conteúdo, exemplo, eu coloquei "width: 100%;", para nos itens isso que dizer que eles irão ocupar 100% do espaço que sobrar */
+
+    /*
+    flex-grow: 1;   O "flex-grow" serve para pegar o espaço sobrando da tela e preencher de acordo com o tanto de conteúdos que você tem, ou seja ele distribui os elementos proporcionalmente
+    */
+    
+    /*
+    flex-shrink: 1;   O "flex-shrink" faz com que o elemento não diminua de tamanho mesmo com a redução da tela
+    */
+    
+    /*
+    flex-basis:320px;   O "flex-basis" faz com que antes de disvidir o espaço em branco de todos os elementos ele vai dar esse tamanho para o elemento
+    */
+
+    /* OBS:
+    flex: 1 1 320px;   Existe o "flex" que seria um atalho para os 3 atributos de cima (grow, shrink e basis, respativamente). Recomenda-se usar esse atalho
+    */
+
+    height: 200px;
+    color: white;
+    background: red;
+}
+
+.flex-item1:nth-child(2)  /* O "2"dentro do parênteses serve para indicar que eu vou mexer no conteúdo 2 (item 2) */ {
+    flex: 2 1 320px;  /* Aqui eu pedi para preencher 2x a mais o conteúdo em branco que sobrar no item 2 */
+    background: purple;
+}
+
+
+.flex-container2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-flow: row nowrap;
+    background: gray;
+    height: 300px;
+}
+
+
+.flex-item2 {
+    width: 100%;
+    color: white;
+    background: red;
+}
+
+
+.flex-item2:nth-child(3) {
+    align-self: flex-end;  /* Essa é uma forma de alinha itens separadamente (usada hoje me dia) */
+}
+
+
+.flex-item2:nth-child(4) {
+    align-self: center;  /* Essa é uma forma de alinha itens separadamente (usada hoje me dia) */
+}
+
+.flex-item2:nth-child(2) {
+    align-self: stretch;
+}
+
+.flex-item2:nth-child(1) {
+    order: 1;  /* O "order" serve para folocar na ordem que você quiser os itens, eles tem por valor padrão o 0. Então, se eu fizer da mesma forma que eu fiz o "1" sria o valor mais alto dos elementos e então ele ficaria em último. Se eu colocasse "-1" ele voltaria para o primeiro */
+}
