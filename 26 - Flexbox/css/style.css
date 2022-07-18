@@ -53,7 +53,7 @@
     */
 
     /* OBS:
-    flex: 1 1 320px;   Existe o "flex" que seria um atalho para os 3 atributos de cima (grow, shrink e basis, respativamente). Recomenda-se usar esse atalho
+    flex: 1 1 320px;   Existe o "flex" que seria um atalho para os 3 atributos de cima (grow, shrink e basis, respativamente). OBS: Recomenda-se usar esse atalho
     */
 
     height: 200px;
@@ -85,12 +85,12 @@
 
 
 .flex-item2:nth-child(3) {
-    align-self: flex-end;  /* Essa é uma forma de alinha itens separadamente (usada hoje me dia) */
+    align-self: flex-end;  /* Essa é uma forma de alinhar itens separadamente (usada hoje me dia) */
 }
 
 
 .flex-item2:nth-child(4) {
-    align-self: center;  /* Essa é uma forma de alinha itens separadamente (usada hoje me dia) */
+    align-self: center;
 }
 
 .flex-item2:nth-child(2) {
@@ -98,5 +98,35 @@
 }
 
 .flex-item2:nth-child(1) {
-    order: 1;  /* O "order" serve para folocar na ordem que você quiser os itens, eles tem por valor padrão o 0. Então, se eu fizer da mesma forma que eu fiz o "1" sria o valor mais alto dos elementos e então ele ficaria em último. Se eu colocasse "-1" ele voltaria para o primeiro */
+    order: 1;  /* O "order" serve para colocar na ordem que você quiser os itens, eles tem por valor padrão o 0. Então, se eu fizer da mesma forma que eu fiz o "1" seria o valor mais alto dos elementos e então ele ficaria em último. Se eu colocasse "-1" ele voltaria para o primeiro */
+}
+
+p {
+    margin: 0 0 24px;
+}
+
+.two-columns {
+    display: flex;
+}
+
+
+.two-columns .col {  /* Aqui estou configurando 2 elementos "display: flex;" um dentro do outro */
+    display: flex;
+    flex-direction: column;
+    background: lawngreen;
+    margin: 15px;
+    padding: 50px;
+    font-size: 20px;
+}
+
+.gallery {
+    flex-flow: row wrap;
+    display: flex;
+}
+
+.gallery .img {  /* Aqui é o terceiro elemento que está dentro do segundo quadro */
+    flex: 1 0 20%;
+    height: 50px;
+    background: blue;
+    margin: 10px;
 }
