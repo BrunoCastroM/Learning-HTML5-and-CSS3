@@ -1,0 +1,85 @@
+/* A "grid", é bem similar ao flex box, ela mexe na propriedade display do elemento. Só que ela é prórpia para fazer isso (criar grades) */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: sans-serif;
+    font-size: 40px;
+}
+
+
+.grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 200px 1fr  2fr;  /* Aqui você passa o tamanho das colunas na ordem, nesse caso eu coloquei a primeira com 200px e a segunda coluna com 1 "fr", e a terceira com 2 "fr" (o dobro do primeiro fr). O "fr" ocupa o resto do espaço que está sobrando na tela. Para não precisar ficar colocando a medida em cada coluna eu posso colocar a função "repeat(10, 1fr)", nesse caso, eu pedi que as 10 primeiras colunas ficassem com a medida de 1fr */
+    gap: 30px;  /* O "gap" é um espaçamento entre as grids */
+}
+
+.grid div{
+    background-color: turquoise;
+    min-height: 100px;
+}
+
+.grid div:nth-child(5) {
+    background-color: darkgoldenrod;
+    grid-column-start: 2;  /* Posso mexer nas colunas também e linhas dessa forma */
+    grid-column-end: 4;
+}
+
+
+.grid div:nth-child(13) {
+    background-color: darkolivegreen;
+    grid-row: span 2; /* O "span" serve para dizer quantas linhas ou colunas ele irá ocupar, sem quebrar tanto a grid */
+}
+
+
+.grid div:nth-child(5) {
+    background-color: darkgoldenrod;
+    grid-column-start: 2;
+    grid-column-end: 4;
+}
+
+
+/* Maneira de deixar a grid responsiva ao tamanho da tela: */
+.grid1 {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));  /* Em vez de colocar o tanto de colunas que eu quero eu posso colocar o "auto-fill" (ele vai outropreencher de acordo com o tamanho da tela). No exemplo, eu coloquei o mínimo de 320px e o máximo de 1fr. 
+    OBS: Essa forma é a mais comum de ser usada */
+    grid-template-rows: 2fr 3fr;  /* Esse mexe com as linhas no caso */
+    gap: 30px;
+}
+
+.grid1 div{
+    background-color: rebeccapurple;
+    min-height: 100px;
+    
+}
+
+
+.grid2 {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: [um] 1fr [dois] 1fr [tres] 1fr [quatro];  /* Eu posso nomear os atributos no CSS */
+    gap: 30px;
+}
+
+.grid2 div{
+    background-color: orangered;
+    min-height: 100px;
+}
+
+.grid2 div:nth-child(4) {
+    background-color: darkgrey;
+    grid-column-start: um; /* Aqui eu posso chamar o atributo que eu nomeei em cima*/
+    grid-column-end: quatro;
+    grid-column: um / quatro;  /* Essa é outra forma de fazer, mais simplificada (começa na coluna 1 e termina na 4) */
+}
