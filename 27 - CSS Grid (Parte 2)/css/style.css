@@ -1,0 +1,21 @@
+/* Link para tirar as dúvidas: https://developer.mozilla.org/pt-BR/docs/Web/CSS/grid  |  https://www.w3schools.com/css/css_grid.asp  |  https://css-tricks.com/snippets/css/complete-guide-grid/ */
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: sans-serif;
+    font-size: 40px;
+}
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
