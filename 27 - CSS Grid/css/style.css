@@ -18,7 +18,7 @@ body {
     margin: 0 auto;
     display: grid;
     grid-template-columns: 200px 1fr  2fr;  /* Aqui você passa o tamanho das colunas na ordem, nesse caso eu coloquei a primeira com 200px e a segunda coluna com 1 "fr", e a terceira com 2 "fr" (o dobro do primeiro fr). O "fr" ocupa o resto do espaço que está sobrando na tela. Para não precisar ficar colocando a medida em cada coluna eu posso colocar a função "repeat(10, 1fr)", nesse caso, eu pedi que as 10 primeiras colunas ficassem com a medida de 1fr */
-    gap: 30px;  /* O "gap" é um espaçamento entre as grids */
+    gap: 30px 80px;  /* O "gap" é um espaçamento entre as grids, ou seja, é a distância que a gente tem entre as colunas e as linhas. Podemos especificar também, como o "row-gap" espaçamento só entre linhas e o "column-gap" espaçamento só entre as colunas. Porém, no próprio "gap" em si já tem um atalho (aqui ficou 30px para as linhas e 80px para as colunas) */
 }
 
 .grid div{
